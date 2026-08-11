@@ -47,6 +47,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       suppressHydrationWarning
       className={`${firaSans.variable} font-sans h-full antialiased`}
     >
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+      </head>
       <body className="min-h-full flex flex-col bg-green-50 text-slate-900 relative selection:bg-green-500/30">
         <Toaster position="top-center" richColors />
         {/* Faint Background Image */}
