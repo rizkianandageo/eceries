@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 
-const SW_CONTENT = `
-// ECERIES Service Worker v4
-const CACHE_NAME = 'eceries-v4';
+const SW_CONTENT = `// ECERIES Service Worker v5
+const CACHE_NAME = 'eceries-v5';
 
 self.addEventListener('install', (event) => {
   console.log('[SW] Installing...');
@@ -15,18 +14,9 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Only cache GET requests
   if (event.request.method !== 'GET') return;
-
   event.respondWith(
-    fetch(event.request)
-      .then((response) => {
-        return response;
-      })
-      .catch(() => {
-        // Return cached or fallback
-        return caches.match(event.request);
-      })
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });
 `;
