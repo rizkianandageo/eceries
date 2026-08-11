@@ -9,6 +9,7 @@ import { ChefHat, Clock, AlertTriangle, CheckCircle2, Circle, ChevronDown, Chevr
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 
 export default function RecipesPage() {
   const { items } = useInventoryStore();
@@ -67,7 +68,7 @@ export default function RecipesPage() {
       }
     } catch (error) {
       console.error(error);
-      alert("Failed to generate recipe. Please try again.");
+      toast.error("Failed to generate recipe. Please try again.");
     } finally {
       setIsGenerating(false);
     }

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { format, parseISO } from "date-fns";
 import { enUS } from "date-fns/locale";
 import { ShoppingCart } from "lucide-react";
+import { toast } from "sonner";
 
 export default function InventoryPage() {
   const { items, removeItem, addShoppingItem } = useInventoryStore();
@@ -110,7 +111,7 @@ export default function InventoryPage() {
                             <button 
                               onClick={() => {
                                 addShoppingItem(item.name, item.category);
-                                alert(`Added ${item.name} to Shopping List!`);
+                                toast.success(`Added ${item.name} to Shopping List!`);
                               }}
                               className="text-slate-400 hover:text-emerald-500 hover:bg-emerald-50 transition-colors p-2 rounded-full shrink-0"
                               title="Add to Shopping List"

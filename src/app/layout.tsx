@@ -44,6 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${firaSans.variable} font-sans h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-green-50 text-slate-900 relative selection:bg-green-500/30">
+        <Toaster position="top-center" richColors />
         {/* Faint Background Image */}
         <div 
           className="fixed inset-0 z-[-20] bg-cover bg-center bg-no-repeat opacity-[0.12] pointer-events-none"

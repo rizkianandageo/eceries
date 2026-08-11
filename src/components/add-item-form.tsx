@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { format } from "date-fns";
 import { Apple, Box, MapPin, CalendarDays, CalendarClock, PenLine, Sparkles, Camera, Archive, Refrigerator, Snowflake } from "lucide-react";
+import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button";
@@ -122,6 +123,7 @@ export function AddItemForm({ onSuccess, prefillName }: { onSuccess?: () => void
     });
     
     setIsSubmitting(false);
+    toast.success(`${data.name} added successfully!`);
     if (onSuccess) onSuccess();
   };
 
