@@ -287,7 +287,6 @@ export function AddItemForm({ onSuccess, prefillName }: { onSuccess?: () => void
                     setIsPurchaseOpen(false);
                   }
                 }}
-                initialFocus
               />
             </PopoverContent>
           </Popover>
@@ -322,7 +321,6 @@ export function AddItemForm({ onSuccess, prefillName }: { onSuccess?: () => void
                       setIsExpiryOpen(false);
                     }
                   }}
-                  initialFocus
                 />
               </PopoverContent>
             </Popover>

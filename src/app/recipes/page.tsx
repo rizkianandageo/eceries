@@ -38,7 +38,7 @@ export default function RecipesPage() {
     try {
       // Find expiring items
       const expiringItems = items.filter(item => {
-        const fresh = calculateFreshness(item.purchaseDate, item.expiryDate);
+        const fresh = calculateFreshness(item.expiryDate);
         return fresh.status === 'warning' || fresh.status === 'critical';
       });
 

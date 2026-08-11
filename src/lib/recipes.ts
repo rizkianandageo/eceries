@@ -1,5 +1,5 @@
 import { InventoryItem } from '@/store/useInventoryStore';
-import { calculateFreshness } from '@/lib/freshness';
+import { calculateFreshness, FreshnessInfo } from '@/lib/freshness';
 import { v4 as uuidv4 } from 'uuid';
 
 export interface Recipe {
@@ -629,7 +629,7 @@ export const RECIPE_DB: Recipe[] = [
 
 export function scoreRecipes(recipes: Recipe[], inventory: InventoryItem[]): MatchedRecipe[] {
   // 1. Process inventory to find available item names and their freshness
-  const availableItems = new Map<string, FreshnessStatus>();
+  const availableItems = new Map<string, FreshnessInfo>();
   
   inventory.forEach(item => {
     const freshness = calculateFreshness(item.expiryDate);
