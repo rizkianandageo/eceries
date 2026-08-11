@@ -4,7 +4,7 @@
   "description": "Smart inventory management and recipe recommendations.",
   "start_url": "/",
   "scope": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#10b981",
   "icons": [
