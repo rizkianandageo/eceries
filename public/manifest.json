@@ -3,7 +3,8 @@
   "short_name": "Eceries",
   "description": "Smart inventory management and recipe recommendations.",
   "start_url": "/",
-  "display": "standalone",
+  "scope": "/",
+  "display": "fullscreen",
   "background_color": "#f8fafc",
   "theme_color": "#10b981",
   "icons": [
